@@ -6,8 +6,8 @@ app = Flask(__name__)
 app.secret_key = "joel_secret"
 
 # ================= DB =================
-conexion = mysql.connector.connect(
 import os
+import mysql.connector
 
 conexion = mysql.connector.connect(
     host=os.getenv("MYSQLHOST"),
