@@ -19,6 +19,7 @@ conexion = mysql.connector.connect(
     database=url.path[1:],
     port=url.port
 )
+cursor = conexion.cursor(dictionary=True)
 # ================= LOGIN =================
 @app.route("/", methods=["GET", "POST"])
 def login():
