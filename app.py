@@ -6,15 +6,18 @@ app = Flask(__name__)
 app.secret_key = "joel_secret"
 
 # ================= DB =================
-import os
 import mysql.connector
+from urllib.parse import urlparse
+import os
+
+url = urlparse(os.getenv("MYSQL_PUBLIC_URL"))
 
 conexion = mysql.connector.connect(
-    host=os.getenv("MYSQLHOST"),
-    user=os.getenv("MYSQLUSER"),
-    password=os.getenv("MYSQLPASSWORD"),
-    database=os.getenv("MYSQLDATABASE"),
-    port=os.getenv("MYSQLPORT")
+    host=url.hostname,
+    user=url.username,
+    password=url.password,
+    database=url.path[1:],
+    port=url.port
 )
 # ================= LOGIN =================
 @app.route("/", methods=["GET", "POST"])
