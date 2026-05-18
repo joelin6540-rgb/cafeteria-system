@@ -7,14 +7,15 @@ app.secret_key = "joel_secret"
 
 # ================= DB =================
 conexion = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="320083747",
-    database="cafeteria_db"
+import os
+
+conexion = mysql.connector.connect(
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=os.getenv("MYSQLPORT")
 )
-
-cursor = conexion.cursor(dictionary=True)
-
 # ================= LOGIN =================
 @app.route("/", methods=["GET", "POST"])
 def login():
