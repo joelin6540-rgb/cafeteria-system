@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Editar Gasto
+    </title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+
+    <div class="card bg-secondary p-5">
+
+        <h1 class="mb-4">
+            ✏ Editar Gasto
+        </h1>
+
+        <form method="POST">
+
+            <div class="mb-3">
+
+                <label>
+                    Gasto de
+                </label>
+
+                <input
+                    type="text"
+                    name="gasto_de"
+                    class="form-control"
+                    value="{{ gasto['gasto_de'] }}"
+                >
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>
+                    Tipo
+                </label>
+
+                <input
+                    type="text"
+                    name="tipo"
+                    class="form-control"
+                    value="{{ gasto['tipo'] }}"
+                >
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>
+                    Categoría
+                </label>
+
+                <input
+                    type="text"
+                    name="categoria"
+                    class="form-control"
+                    value="{{ gasto['categoria'] }}"
+                >
+
+            </div>
+
+            <button class="btn btn-warning">
+
+                Actualizar Gasto
+
+            </button>
+
+            <a
+                href="/tabla/gastos"
+                class="btn btn-secondary"
+            >
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
