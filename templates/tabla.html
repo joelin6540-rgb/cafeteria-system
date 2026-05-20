@@ -127,8 +127,22 @@
                     {% for valor in fila.values() %}
 
                     <td>
-                        {{ valor }}
-                    </td>
+
+{% if valor == 1 %}
+    AJUSCOFFE
+
+{% elif valor == 2 %}
+    FINCA
+
+{% elif valor == 3 %}
+    COCINA
+
+{% else %}
+    {{ valor }}
+
+{% endif %}
+
+</td>
 
                     {% endfor %}
 
